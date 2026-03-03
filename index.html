@@ -102,9 +102,31 @@
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
       <textarea placeholder="Your Message" required></textarea>
-      <button>
-        <a href="https://wa.me/254792544527" class="whatsapp" target="_blank">SEND MESSAGE</a>
-      </button>
+      <button onclick="sendMessage()">
+  SEND MESSAGE
+</button>
+
+<script>
+function sendMessage() {
+
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var talent = document.getElementById("talent").value;
+
+    var message = encodeURIComponent(
+        "New Talanta Konnect Registration:\n" +
+        "Username: " + username + "\n" +
+        "Email: " + email + "\n" +
+        "Talent: " + talent
+    );
+
+    var phoneNumber = "254792544527";
+
+    var url = "https://wa.me/" + phoneNumber + "?text=" + message;
+
+    window.open(url, "_blank");
+}
+</script>
     </form>
   </section>
 
@@ -120,6 +142,7 @@
 </div>
 </body>
 </html>
+
 
 
 
